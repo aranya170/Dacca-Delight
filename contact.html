@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Dacca Delights</title>
+    <link rel="icon" type="image/jpg" href="assets/logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-gray-800"><img src="assets/logo.jpg" alt="Dacca Delights Logo" class="h-12"></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-gray-800">Home</a>
+                <a href="menu.html" class="text-gray-600 hover:text-gray-800">Menu</a>
+                <a href="about.html" class="text-gray-600 hover:text-gray-800">About</a>
+                <a href="contact.html" class="text-gray-600 hover:text-gray-800">Contact</a>
+            </div>
+            <div class="flex items-center">
+                <button class="relative text-gray-600 hover:text-gray-800 cart-icon">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1 cart-count">0</span>
+                </button>
+                <button class="md:hidden ml-4" id="mobile-menu-button">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <a href="index.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200">Home</a>
+            <a href="menu.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200">Menu</a>
+            <a href="about.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200">About</a>
+            <a href="contact.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Contact Us</h1>
+        <p class="text-center text-gray-600">Get in touch with Dacca Delights.</p>
+        <div class="mt-8 text-gray-700 leading-relaxed text-center">
+            <p class="mb-4">Have questions, feedback, or just want to say hello? We'd love to hear from you!</p>
+            <p class="mb-2"><strong>Email:</strong> info@daccadelights.com</p>
+            <p class="mb-2"><strong>Phone:</strong> +1 (123) 456-7890</p>
+            <p class="mb-4"><strong>Address:</strong> 123 Flavorful Lane, Culinary City, CA 90210</p>
+            <p class="mb-4">Follow us on Facebook: <a href="https://www.facebook.com/dacca.delights2025" target="_blank" class="text-blue-600 hover:underline">Dacca Delights Facebook Page</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Dacca Delights. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/src/js/app.js"></script>
+</body>
+</html>
