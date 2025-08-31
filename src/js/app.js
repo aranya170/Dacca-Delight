@@ -173,4 +173,64 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial setup
     displayCartItems();
     updateCartCount();
+
+    // ==========================================================================
+    // Search and Filter
+    // ==========================================================================
+    const searchInput = document.getElementById('search-input');
+    const productCards = document.querySelectorAll('.product-card');
+    const filterButton = document.getElementById('filter-button');
+    const filterDropdown = document.getElementById('filter-dropdown');
+
+    if (filterButton) {
+        filterButton.addEventListener('click', () => {
+            filterDropdown.classList.toggle('hidden');
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+    }
+
+    const filterOptions = document.querySelectorAll('.filter-option');
+    filterOptions.forEach(option => {
+        option.addEventListener('change', applyFilters);
+    });
+
+    const priceFilter = document.getElementById('price-filter');
+    const priceValue = document.getElementById('price-value');
+
+    if (priceFilter) {
+        priceFilter.addEventListener('input', () => {
+            if (priceValue) {
+                priceValue.textContent = `$` + priceFilter.value;
+            }
+            applyFilters();
+        });
+    }
+
+    function applyFilters() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const checkedFlavours = Array.from(document.querySelectorAll('.filter-option[data-filter="flavour"]:checked')).map(el => el.value);
+        const checkedColors = Array.from(document.querySelectorAll('.filter-option[data-filter="color"]:checked')).map(el => el.value);
+        const maxPrice = priceFilter ? priceFilter.value : null;
+
+        productCards.forEach(card => {
+            const productName = card.querySelector('h3').textContent.toLowerCase();
+            const productFlavour = card.dataset.flavour;
+            const productColor = card.dataset.color;
+            const productPrice = parseFloat(card.dataset.price);
+
+            const nameMatch = productName.includes(searchTerm);
+            const flavourMatch = checkedFlavours.length === 0 || checkedFlavours.includes(productFlavour);
+            const colorMatch = checkedColors.length === 0 || checkedColors.includes(productColor);
+            const priceMatch = !maxPrice || productPrice <= maxPrice;
+
+            if (nameMatch && flavourMatch && colorMatch && priceMatch) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
 });

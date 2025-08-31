@@ -233,9 +233,28 @@
     <section class="bg-white py-16">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Our Products</h2>
+            <div class="mb-8 flex">
+                <input type="text" id="search-input" class="w-full px-4 py-2 border rounded-l-lg" placeholder="Search for products...">
+                <div class="relative z-20">
+                    <button id="filter-button" class="px-4 py-2 border-t border-b border-r rounded-r-lg bg-gray-200 hover:bg-gray-300">Filter</button>
+                    <div id="filter-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden z-30">
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">Flavours</h4>
+                            <label><input type="checkbox" class="filter-option" data-filter="flavour" value="chocolate"> Chocolate</label><br>
+                            <label><input type="checkbox" class="filter-option" data-filter="flavour" value="vanilla"> Vanilla</label><br>
+                            <h4 class="font-bold mt-4 mb-2">Colors</h4>
+                            <label><input type="checkbox" class="filter-option" data-filter="color" value="red"> Red</label><br>
+                            <label><input type="checkbox" class="filter-option" data-filter="color" value="blue"> Blue</label><br>
+                            <h4 class="font-bold mt-4 mb-2">Price</h4>
+                            <input type="range" id="price-filter" class="w-full">
+                            <span id="price-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Product Card -->
-                <div class="bg-white rounded-lg shadow-md product-card">
+                <div class="bg-white rounded-lg shadow-md product-card" data-flavour="chocolate" data-color="red" data-price="19.99">
                     <img src="assets/515438196_122144195606781207_2242870567238104021_n.jpg" alt="Product Image" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Product Name 1</h3>
@@ -244,7 +263,7 @@
                     <button class="bg-gray-800 text-white font-bold py-2 px-4 rounded hover:bg-gray-700 add-to-cart-btn" data-product-name="Product Name 1" data-product-price="19.99">Add to Cart</button>
                 </div>
                 <!-- Product Card -->
-                <div class="bg-white rounded-lg shadow-md product-card">
+                <div class="bg-white rounded-lg shadow-md product-card" data-flavour="vanilla" data-color="blue" data-price="24.99">
                     <img src="assets/527365216_122143511480781207_3458978378675705206_n.jpg" alt="Product Image" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Product Name 2</h3>
@@ -253,7 +272,7 @@
                     <button class="bg-gray-800 text-white font-bold py-2 px-4 rounded hover:bg-gray-700 add-to-cart-btn" data-product-name="Product Name 2" data-product-price="24.99">Add to Cart</button>
                 </div>
                 <!-- Product Card -->
-                <div class="bg-white rounded-lg shadow-md product-card">
+                <div class="bg-white rounded-lg shadow-md product-card" data-flavour="chocolate" data-color="red" data-price="29.99">
                     <img src="assets/530876998_122144355674781207_8904954470780635009_n.jpg" alt="Product Image" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Product Name 3</h3>
@@ -262,7 +281,7 @@
                     <button class="bg-gray-800 text-white font-bold py-2 px-4 rounded hover:bg-gray-700 add-to-cart-btn" data-product-name="Product Name 3" data-product-price="29.99">Add to Cart</button>
                 </div>
                 <!-- Product Card -->
-                <div class="bg-white rounded-lg shadow-md product-card">
+                <div class="bg-white rounded-lg shadow-md product-card" data-flavour="vanilla" data-color="blue" data-price="34.99">
                     <img src="assets/531491817_122144212094781207_4157144215828837263_n.jpg" alt="Product Image" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Product Name 4</h3>
